@@ -1,0 +1,7 @@
+sed -i "1s/X_3GPP/3GPP/g" *.csv;
+sed -i "1s/X_ASC/ASC/g" *.csv
+sed -i "s/telcel/vodafone/g" TELCEL.STD_USER.201212312036.300.0.csv
+
+split -dl 100000 TELCEL.STD_CTRL.20130104102719.300.0.csv ctrl_a
+split -dl 100000 TELCEL.STD_CTRL.20130109114211.300.0.csv ctrl_b
+split -dl 100000 TELCEL.STD_USER.201212312036.300.0.csv user_a
