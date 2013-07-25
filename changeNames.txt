@@ -1,0 +1,23 @@
+#!/bin/bash
+for file in ctrl_*;
+do
+    if [ -f $file ];
+    then
+	fileword=$(head -n1 $file | cut -f7 -d",");
+	ext=".csv"
+	prefix="TELCEL.STD_CTRL."
+	[ "$file" != "$fileword" ] && $(mv "$file" "$prefix$fileword$ext")
+    fi;
+done
+
+#!/bin/bash
+for file in user_*;
+do
+    if [ -f $file ];
+    then
+	fileword=$(head -n1 $file | cut -f8 -d",");
+	ext=".csv"
+	prefix="TELCEL.STD_USER."
+	[ "$file" != "$fileword" ] && $(mv "$file" "$prefix$fileword$ext")
+    fi;
+done
