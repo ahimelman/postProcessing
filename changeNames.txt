@@ -10,7 +10,6 @@ do
     fi;
 done
 
-#!/bin/bash
 for file in user_*;
 do
     if [ -f $file ];
@@ -21,3 +20,5 @@ do
 	[ "$file" != "$fileword" ] && $(mv "$file" "$prefix$fileword$ext")
     fi;
 done
+
+
